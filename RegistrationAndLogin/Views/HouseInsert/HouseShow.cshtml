@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Domki_Rezerwacje.Models.House>
+
+@{
+    ViewBag.Title = "HouseShow";
+}
+
+<h4>Dostępne domki:</h4>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Nazwa domku
+        </th>
+        <th>
+            Miejscowość
+        </th>
+        <th>
+            Opis
+        </th>
+        <th>
+            Ilość miejsc
+        </th>
+        <th>
+            Nazwisko właściciela
+        </th>
+        <th>
+            Telefon kontaktowy
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HouseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Owner)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerPhone)
+            </td>
+            
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Powrót", "Index", "Home")
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

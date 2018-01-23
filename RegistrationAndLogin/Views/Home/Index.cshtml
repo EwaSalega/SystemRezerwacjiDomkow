@@ -1,0 +1,43 @@
+﻿@{
+
+    ViewBag.Title = "Strona domowa";
+}
+Witaj @HttpContext.Current.User.Identity.Name
+
+
+
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("Logout", "User", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        <a href="javascript:document.getElementById('logoutForm').submit()"> Wyloguj</a>
+    }
+}
+
+<br />
+<br />
+
+<ul class="nav nav-pills">
+    <li> <a href="~/HouseInsert/HouseShow">Wyświetl oferty</a></li>
+    <li><a href="~/HouseInsert/HouseAdd">Dodaj ofertę</a></li>
+</ul>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+
+
+
